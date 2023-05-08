@@ -1,10 +1,7 @@
-/* import "./components/my-table.js"
-import "./components/funciontabla.js"
-   */
-  function guardar(){
-    
-    event.preventDefault();
-    
+export default {
+    mostrar(){
+function guardar(){
+   
     let nombre = document.getElementById("nombre").value;
     let edad = document.getElementById("edad").value;
     let telefono = document.getElementById("telefono").value;
@@ -24,4 +21,7 @@ import "./components/funciontabla.js"
    	btn.innerHTML=fila;
     document.getElementById("tablita").appendChild(btn);
 }
+}
+  
 
+}

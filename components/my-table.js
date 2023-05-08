@@ -1,10 +1,23 @@
-/* import "./components/my-table.js"
-import "./components/funciontabla.js"
-   */
-  function guardar(){
-    
-    event.preventDefault();
-    
+let pathName = new URL(import.meta.url).pathname;
+let name = pathName.split("/").pop().replace(".js","");
+
+export default class mytable extends HTMLElement{
+    static async components(){
+        return await(await fetch(pathName.replace(".js",".html"))).text();
+    };
+    constructor(){
+        super();
+        this.attachShadow({mode:"open"});
+        Promise.resolve(mytable.components()).then(html=>{
+            this.shadowRoot.innerHTML=html;
+        })
+        console.log("Funciona x4");
+    };
+};
+customElements.define(name, mytable)
+
+function guardar(){
+   
     let nombre = document.getElementById("nombre").value;
     let edad = document.getElementById("edad").value;
     let telefono = document.getElementById("telefono").value;
@@ -24,4 +37,3 @@ import "./components/funciontabla.js"
    	btn.innerHTML=fila;
     document.getElementById("tablita").appendChild(btn);
 }
-

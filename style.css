@@ -7,8 +7,16 @@ body {
     background-attachment: fixed;
     }
 .title{
-    font-size: 1000%;
-}    
+    font-size: 5rem;
+    margin-left: 3%;
+    box-shadow: 0 0 40px rgb(255, 255, 255);
+    text-shadow: 0 0 40px #fff;
+}  
+.contitle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}  
 .reclutas{
     display: flex;
     justify-content: center;
@@ -36,9 +44,16 @@ input{
     
     width: 100%;
 }
+
 .tabla, td, th {
     border: 3px solid #fff;
     border-collapse: collapse;
     color: #fff;
     margin-top: 10%;
+    
 }
+
+.totaltabla{
+        display: flex;
+        justify-content: center;
+    }
