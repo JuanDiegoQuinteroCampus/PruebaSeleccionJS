@@ -6,40 +6,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <script src="main.js" defer type="module"></script>
+    <script src="main.js" ></script>
 </head>
 <body>
     
     
     
     <div class="reclutas">
-        <form action="" class="reclutas" id="formulario">
-            <h2>Reclutas</h2>
-            <p>Ingresa tu Nombre</p>
-            <input type="text" placeholder="Ingresa tu Nombre" id="nombre">
-            <p>Ingresa tu edad</p>
-            <input type="number" placeholder="Ingresa tu edad" id="edad">
-            <p>Ingresa tu teléfono</p>
-            <input type="tel" placeholder="Ingresa tu teléfono" id="telefono">
-            <p>Ingresa tu email</p>
-            <input type="email" placeholder="Ingresa tu email" id="email">
-            <p>Ingresa tu dirección</p>
-            <input type="text" placeholder="Ingresa tu dirección" id="direccion">
-            <p>Ingresa tu fechaDeNacimiento</p>
-            <input type="date" placeholder="Ingresa tu fechaDeNacimiento" id="born">
-            <p>Ingresa tu numeroDeIdentificación</p>
-            <input type="number" placeholder="Ingresa tu numeroDeIdentificación" id="NumIdentificacion">
-            <p>Ingresa tu fechaDeIngresoAlPrograma</p>
-            <input type="date" placeholder="Ingresa tu fechaDeIngresoAlPrograma" id="Ingreso">
-            <p>Ingresa tu id_team</p>
-            <input type="number" placeholder="Ingresa tu id_team" id="id_team">
-            <button id="btn_guardar" onclick="guardar()" type="submit">Guardar</button>
+        <h1 class="title">CampusLands</h1>
+        <form  id="formulario">
+            Ingresa tu Nombre: <input id="nombre"  type="text"><br><br>
+            Ingresa tu edad:<input id="edad"  type="text"><br><br>
+            Ingresa tu teléfono: <input id="telefono"  type="text"><br><br>
+            Ingresa tu email: <input id="email"  type="text"><br><br> 
+            Ingresa tu dirección: <input id="direccion"  type="text"><br><br>
+            Ingresa tu fechaDeNacimiento: <input id="born"  type="text"><br><br>
+            Ingresa tu numeroDeIdentificación: <input id="NumIdentificacion"  type="text"><br><br>
+            Ingresa tu fechaDeIngresoAlPrograma: <input id="Ingreso"  type="text"><br><br>
+            Ingresa tu id_team: <input id="id_team"  type="text"><br><br>  
+            <button id="btn_guardar" onclick="guardar() " class="btn">Guardar</button><br><br>
+            
         </form>
     </div>
-            <tbody id="tabla-datos">
-                                        
-            </tbody>
-
             
+            
+    <div>
+            <table class="tabla">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>edad</th>
+                        <th>teléfono</th>
+                        <th>email</th>
+                        <th>dirección</th>
+                        <th>fechaDeNacimiento</th>
+                        <th>numeroDeIdentificación</th>
+                        <th>fechaDeIngresoAlPrograma</th>
+                        <th>id_team</th>
+                    </tr>
+                </thead>
+                <tbody id="tablita">
+    
+                </tbody>
+            </table>
+    </div>        
 </body>
 </html>
