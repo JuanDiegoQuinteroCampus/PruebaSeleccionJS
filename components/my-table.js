@@ -1,3 +1,5 @@
+import api  from "../api.js";
+
 let pathName = new URL(import.meta.url).pathname;
 let name = pathName.split("/").pop().replace(".js","");
 
@@ -12,7 +14,9 @@ export default class mytable extends HTMLElement{
         console.log("Funciona x4");
     };
     hadledEvent(e){
-        (e.type === "click") ? this.sendMessage(e) : console.log("error 404");
+        if (e.target.id === "btn_guardar") {
+            guardar();
+        }
     };
     sendMessage(e){
         this.navLinks = this.shadowRoot.querySelector(".navbar-links")

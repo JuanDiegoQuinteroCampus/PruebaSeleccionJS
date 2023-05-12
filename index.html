@@ -13,34 +13,28 @@
         <div class="contitle">
             <h1 class="title">CampusLands</h1>
         </div>
-        <form  id="formulario" onsubmit="return false;">
-            Ingresa tu Nombre: <input id="nombre"  type="text"><br><br>
-            Ingresa tu edad:<input id="edad"  type="text"><br><br>
-            Ingresa tu teléfono: <input id="telefono"  type="text"><br><br>
-            Ingresa tu email: <input id="email"  type="text"><br><br> 
-            Ingresa tu dirección: <input id="direccion"  type="text"><br><br>
-            Ingresa tu fechaDeNacimiento: <input id="born"  type="text"><br><br>
-            Ingresa tu numeroDeIdentificación: <input id="NumIdentificacion"  type="text"><br><br>
-            Ingresa tu fechaDeIngresoAlPrograma: <input id="Ingreso"  type="text"><br><br>
-            Ingresa tu id_team: <input id="id_team"  type="text"><br><br>  
-            <button id="btn_guardar" onclick="guardar()" class="btn">Guardar</button><br><br>   
-        </form>
+        <select id="opciones">
+            <option value="form1">Reclutas</option>
+            <option value="form2">Team</option>
+            <option value="form3">Skill</option>
+            <option value="form4">Modulo Skill</option>
+            <option value="form5">Evaluación</option>
+            
+        </select>
+          
+        <div id="contenido">
+        </div>  
+        
+        
+        
         
     </div>            
     <div>   
         <my-table></my-table>
     </div>  
-    <select id="opciones">
-        <option value="form1">Opción 1</option>
-        <option value="opcion2">Opción 2</option>
-        <option value="opcion3">Opción 3</option>
-      </select>
-      
-      <div id="contenido">
-        <!-- Contenido inicial -->
-      </div>      
+        
 </body>
 </html>
-<!-- <my-table></my-table> -->
+
 
   
