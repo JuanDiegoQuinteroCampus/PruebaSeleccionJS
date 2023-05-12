@@ -8,16 +8,28 @@ export default class mytable extends HTMLElement{
     constructor(){
         super();
         this.attachShadow({mode:"open"});
-        Promise.resolve(mytable.components()).then(html=>{
-            this.shadowRoot.innerHTML=html;
-        })
+        
         console.log("Funciona x4");
     };
+    hadledEvent(e){
+        (e.type === "click") ? this.sendMessage(e) : console.log("error 404");
+    };
+    sendMessage(e){
+        this.navLinks = this.shadowRoot.querySelector(".navbar-links")
+        this.navLinks.classList.toggle(`active`)
+    };
+    connectedCallback(){
+        Promise.resolve(mytable.components()).then(html =>{
+            this.shadowRoot.innerHTML = html;
+            this.mytoggle = this.shadowRoot.querySelector("#btn_guardar");
+            this.mytoggle.addEventListener("click", this.hadledEvent.bind(this))
+        })
+    }
 };
 customElements.define(name, mytable)
 
 function guardar(){
-   
+    event.preventDefault();
     let nombre = document.getElementById("nombre").value;
     let edad = document.getElementById("edad").value;
     let telefono = document.getElementById("telefono").value;
@@ -35,5 +47,6 @@ function guardar(){
 
     let btn = document.createElement("TR");
    	btn.innerHTML=fila;
-    document.getElementById("tablita").appendChild(btn);
+       
+       document.getElementById("tablita").appendChild(btn);
 }

@@ -6,17 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <script src="main.js" ></script>
+    <script src="main.js" defer type="module"></script>
 </head>
 <body>
-    
-    
-    
     <div class="reclutas">
         <div class="contitle">
             <h1 class="title">CampusLands</h1>
         </div>
-        <form  id="formulario">
+        <form  id="formulario" onsubmit="return false;">
             Ingresa tu Nombre: <input id="nombre"  type="text"><br><br>
             Ingresa tu edad:<input id="edad"  type="text"><br><br>
             Ingresa tu teléfono: <input id="telefono"  type="text"><br><br>
@@ -26,34 +23,24 @@
             Ingresa tu numeroDeIdentificación: <input id="NumIdentificacion"  type="text"><br><br>
             Ingresa tu fechaDeIngresoAlPrograma: <input id="Ingreso"  type="text"><br><br>
             Ingresa tu id_team: <input id="id_team"  type="text"><br><br>  
-            <button id="btn_guardar" onclick="guardar() " class="btn">Guardar</button><br><br>
-            
+            <button id="btn_guardar" onclick="guardar()" class="btn">Guardar</button><br><br>   
         </form>
-    </div>
-            
-            
-    <div>
-            
-            <div class="totaltabla">
-                <table class="tabla">
-                    <thead>
-                        <tr>
-                            <th>Nombre</th>
-                            <th>edad</th>
-                            <th>teléfono</th>
-                            <th>email</th>
-                            <th>dirección</th>
-                            <th>fechaDeNacimiento</th>
-                            <th>numeroDeIdentificación</th>
-                            <th>fechaDeIngresoAlPrograma</th>
-                            <th>id_team</th>
-                        </tr>
-                    </thead>
-                    <tbody id="tablita">
-                
-                    </tbody>
-                </table>
-                </div>
-    </div>        
+        
+    </div>            
+    <div>   
+        <my-table></my-table>
+    </div>  
+    <select id="opciones">
+        <option value="form1">Opción 1</option>
+        <option value="opcion2">Opción 2</option>
+        <option value="opcion3">Opción 3</option>
+      </select>
+      
+      <div id="contenido">
+        <!-- Contenido inicial -->
+      </div>      
 </body>
 </html>
+<!-- <my-table></my-table> -->
+
+  
