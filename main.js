@@ -1,4 +1,9 @@
-import "./components/my-table.js"
+import "./components/my-table.js";
+import "./components/my-reclutas.js";
+import "./components/my-skill.js";
+import "./components/my-team.js";
+import "./components/my-moduleskill.js";
+import "./components/my-evaluacion.js";
 
 /* import myfunciontabla from"./components/funciontabla.js" */
   
@@ -9,62 +14,26 @@ let opciones = document.getElementById("opciones");
 let contenido = document.getElementById("contenido");
   opciones.onchange = function() {
     let opcionSeleccionada = opciones.value;
-  
-    
+      
+
     switch (opcionSeleccionada) {
       case "form1":
-        contenido.innerHTML =`<form  id="formulario"  onsubmit="return false;">
-        Ingresa tu ID: <input id="id" name="Id" type="text"><br><br>
-        Ingresa tu Nombre: <input id="nombre" name="nombre" type="text"><br><br>
-        Ingresa tu edad:<input id="edad" name="edad" type="text"><br><br>
-        Ingresa tu teléfono: <input id="telefono" name="teléfono" type="text"><br><br>
-        Ingresa tu email: <input id="email" name="email" type="text"><br><br> 
-        Ingresa tu dirección: <input id="direccion" name="dirección" type="text"><br><br>
-        Ingresa tu fechaDeNacimiento: <input id="born" name="fechaDeNacimiento" type="text"><br><br>
-        Ingresa tu numeroDeIdentificación: <input id="NumIdentificacion" name="numeroDeIdentificación" type="text"><br><br>
-        Ingresa tu fechaDeIngresoAlPrograma: <input id="Ingreso" name="fechaDeIngresoAlPrograma"  type="text"><br><br>
-        Ingresa tu id_team: <input id="id_team" name="id_team" type="text"><br><br>  
-        <button id="btn_guardar" onclick="guardar()" class="btn">Guardar</button><br><br>   
-        <input type="submit" data-accion="GET" value="Listar">
-        <input type="submit" data-accion="POST" value="xd">
-        <input type="submit" data-accion="PUT" value="Actualizar">
-        <input type="submit" data-accion="DELETE" value="Eliminar">
-        <input type="submit" data-accion="SEARCH" value="Buscar">
-    </form>`;
+        contenido.innerHTML =`<my-reclutas></my-reclutas>`;
         break;
       case "form2":
-        contenido.innerHTML = `<form  id="formulario2" onsubmit="return false;">
-        Ingresa tu id: <input id="id" name="Id" type="text"><br><br>
-        Ingresa tu Nombre: <input id="nombre"  name="nombre" type="text"><br><br>
-        Ingresa tu trainer_asociado:<input id="trainer_asociado" name="trainer_asociado" type="text"><br><br> 
-        <button id="btn_guardar" onclick="guardar()" class="btn">Guardar</button><br><br>   
-    </form>`;
+        contenido.innerHTML = `<my-team></my-team>  `;
         break;
       case "form3":
-        contenido.innerHTML = `<form  id="formulario3" onsubmit="return false;">
-        Ingresa tu Id: <input id="id" name="trainer_asociado" type="text"><br><br>
-        Ingresa tu Nombre: <input id="nombre"  name="trainer_asociado" type="text"><br><br>
-        <button id="btn_guardar" onclick="guardar()" class="btn">Guardar</button><br><br>   
-    </form>`;
+        contenido.innerHTML = `<my-skill></my-skill> `;
         break;
         case "form4":
-        contenido.innerHTML = `<form  id="formulario4" onsubmit="return false;">
-          Ingresa tu Id: <input id="id"  type="text"><br><br>
-          Ingresa tu Nombre: <input id="nombre"  type="text"><br><br>
-          Ingresa tu id_skill:<input id="id_skill"  type="text"><br><br>  
-          <button id="btn_guardar" onclick="guardar()" class="btn">Guardar</button><br><br>   
-          </form>`;
+        contenido.innerHTML = `<my-moduleskill></my-moduleskill>`;
           break;
         case "form5":
-          contenido.innerHTML = `<form  id="formulario5" onsubmit="return false;">
-            Ingresa tu Id_recluta: <input id="Id_recluta"  type="text"><br><br>
-            Ingresa tu id_modulo:<input id="id_modulo"  type="text"><br><br>
-            Ingresa tu nota: <input id="nota"  type="text"><br><br>
-            <button id="btn_guardar" onclick="guardar()" class="btn">Guardar</button><br><br>   
-        </form>`;
+          contenido.innerHTML = `<my-evaluacion></my-evaluacion>`;
             break;
       default:
-        contenido.innerHTML = "";
+        contenido.innerHTML = ``;
     }
   };
 

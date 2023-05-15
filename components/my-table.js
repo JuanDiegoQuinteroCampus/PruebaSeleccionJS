@@ -15,7 +15,7 @@ export default class mytable extends HTMLElement{
     };
     hadledEvent(e){
         if (e.target.id === "btn_guardar") {
-            guardar();
+            guardar(e);
         }
     };
     sendMessage(e){
@@ -25,14 +25,14 @@ export default class mytable extends HTMLElement{
     connectedCallback(){
         Promise.resolve(mytable.components()).then(html =>{
             this.shadowRoot.innerHTML = html;
-            this.mytoggle = this.shadowRoot.querySelector("#btn_guardar");
+            this.mytoggle = this.shadowRoot.querySelector("#formulario");
+            console.log(this.mytoggle);
             this.mytoggle.addEventListener("click", this.hadledEvent.bind(this))
         })
     }
 };
 customElements.define(name, mytable)
-
-function guardar(){
+function guardar(event){
     event.preventDefault();
     let nombre = document.getElementById("nombre").value;
     let edad = document.getElementById("edad").value;
@@ -43,14 +43,15 @@ function guardar(){
     let NumIdentificacion = document.getElementById("NumIdentificacion").value;
     let Ingreso = document.getElementById("Ingreso").value;
     let idTeam = document.getElementById("id_team").value;
-    
 
-    
+    console.log(`Valores de entrada: ${nombre}, ${edad}, ${telefono}, ${email}, ${direccion}, ${born}, ${NumIdentificacion}, ${Ingreso}, ${idTeam}`);
 
     let fila="<tr><td>"+nombre+"</td><td>"+edad +"</td><td>"+telefono +"</td><td>"+email+"</td><td>"+direccion +"</td><td>"+born +"</td><td>"+NumIdentificacion+"</td><td>"+Ingreso +"</td><td>"+idTeam +"</td></tr>";
 
+    console.log(`Fila generada: ${fila}`);
+
     let btn = document.createElement("TR");
-   	btn.innerHTML=fila;
+    btn.innerHTML=fila;
        
-       document.getElementById("tablita").appendChild(btn);
+    document.getElementById("tablita").appendChild(btn);
 }
